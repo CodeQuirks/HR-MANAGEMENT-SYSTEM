@@ -1,40 +1,49 @@
-Running the HR Management System Locally with XAMPP
+# HR Management System
 
+## Introduction
 
-Prerequisites
-* XAMPP: Make sure you have XAMPP installed on your computer. You can download it from Apache Friends.
-* Code Editor: Use any code editor you prefer (e.g., VSCode, Sublime Text).
-Steps to Run the Application
-Download the Repository:
+This project is an HR Management System built with CodeIgniter. It provides features for managing employees, departments, and other HR-related tasks.
 
-STEP (1)..Clone the repository using Git or download it as a ZIP file and extract it.
+## Prerequisites
 
-git clone <repository-url>
-Move the Project Folder:
+Before you begin, ensure you have the following installed:
 
-STEP (2)..Place the project folder (e.g., HRSystem-CI) into the htdocs directory of your XAMPP installation. The default path is usually:
+- [XAMPP](https://www.apachefriends.org/index.html) (for running the PHP server and MySQL database)
 
-C:\xampp\htdocs\
-Start XAMPP:
+## Setting Up the Project
 
-STEP (3)..Open the XAMPP Control Panel and start the Apache and MySQL services.
-Create the Database:
+Follow these steps to run the HR Management System on your local machine:
 
-STEP (4)..Open your web browser and go to http://localhost/phpmyadmin.
-Create a new database named hrsystemci.
-Import the SQL file (if provided) to create the necessary tables and data:
-Click on the database name, then go to the "Import" tab.
-Choose the .sql file and click "Go".
-Configure the Database Connection:
+1. **Download the Project**: Clone or download the repository from GitHub.
 
-STEP (5)..Open the application/config/database.php file in your project.
-Update the database configuration with the following settings:
+2. **Place the Project in XAMPP Directory**:
+   - Copy the downloaded project folder to the `htdocs` directory of your XAMPP installation. 
+   - The typical path is `C:\xampp\htdocs\`.
 
+3. **Start XAMPP**:
+   - Open the XAMPP Control Panel.
+   - Start the Apache and MySQL modules.
+
+4. **Create a Database**:
+   - Open your web browser and go to `http://localhost/phpmyadmin`.
+   - Click on the "Databases" tab.
+   - Create a new database named `hrsystemci`.
+
+5. **Import Database Structure**:
+   - In phpMyAdmin, select the `hrsystemci` database.
+   - Click on the "Import" tab.
+   - Choose the SQL file that contains the database structure and click "Go" to import it.
+
+6. **Configure Database Connection**:
+   - Open the `application/config/database.php` file in your project folder.
+   - Update the database configuration as follows:
+
+```php
 $db['default'] = array(
     'dsn'   => '',
     'hostname' => 'localhost',
-    'username' => 'root', // default XAMPP username
-    'password' => '',     // leave blank if you don't have a password
+    'username' => 'root', // Leave blank if there is no password
+    'password' => '', // Leave blank if there is no password
     'database' => 'hrsystemci',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
@@ -51,16 +60,11 @@ $db['default'] = array(
     'failover' => array(),
     'save_queries' => TRUE
 );
+```
+7. **Access the Application**:
+Open your web browser and go to `http://localhost/hrsystemci` (replace hrsystemci with your project folder name if different).
 
-STEP (6)..Access the Application:
-In your web browser, go to:
-
-http://localhost/HRSystem-CI
-Replace HRSystem-CI with the actual folder name if it's different.
-
-
-STEP (7)..Login Credentials:
-
-Use the following credentials to log in:
-Email: thoma@mail.com
-Password: Password@123
+8. **Login Credentials**
+Admin Login:
+Email: `thoma@mail.com`
+Password: `Password@123`
